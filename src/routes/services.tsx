@@ -40,7 +40,7 @@ function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our services"
-        title="Architecture · Construction · Renovation"
+        title="Architecture & Construction · Finishing"
         intro="Four disciplines under one accountable roof — design it, build it, renovate it, style it, with a government-registered firm approved across DHA, Bahria Town and Lake City."
         image="/images/at/construction.webp"
       />

@@ -74,26 +74,21 @@ export const stats = [
 ];
 
 export const team = [
-  { name: "Saad Ahmad", role: "Director Engineering & Technical", image: "/temImages/Team1.webp" },
-  { name: "Ibrahim Khan", role: "Art Director", image: "/temImages/Team2.webp" },
-  { name: "Miss Sabiha Naz", role: "Director Account & Finance", image: "/temImages/Team3.webp" },
-  { name: "CH. Shehzad", role: "Managing Director", image: "/temImages/Team4.webp" },
+  { name: "CH. Shehzad", role: "Managing Director", image: "/temImages/Team1.webp" },
+  { name: "MR. Sohair", role: "Director Operations & Director Business Development", image: "/temImages/Team2.webp" },
+  { name: "Saad Ahmad", role: "Director Engineering & Technical", image: "/temImages/Team3.webp" },
+  { name: "Faisal Naeem", role: "Managing Projects", image: "/temImages/Team4.webp" },
 ];
 
 export const services = [
   {
-    slug: "architecture",
-    title: "Architecture & Design",
+    slug: "architecture-interior",
+    title: "Architecture & Interior Design",
     image: "/images/at/design.webp",
-    short: "Custom architecture and 3D elevations designed around your plot, lifestyle and budget.",
-    body: "Every Abbu Turab home starts with a plan tailored to you — plot orientation, family requirements, budget and long-term value. Our architects prepare full 2D drawings, working plans and photoreal 3D elevations so you can see and refine your home before a single brick is laid.",
-  },
-  {
-    slug: "interior",
-    title: "Interior Design",
-    image: "/images/at/interior-1.webp",
-    short: "Luxury interiors — ceilings, joinery, lighting and finishes crafted end-to-end.",
-    body: "Our in-house interior team designs bespoke ceilings, wall panelling, kitchens, wardrobes and lighting schemes with a luxury-yet-liveable sensibility. We source, coordinate and install so your interior lands exactly as rendered.",
+    short:
+      "Complete end-to-end architecture, 3D elevations, and luxury interior design — from initial floor planning to custom ceilings, joinery, lighting, and premium finishes.",
+    body:
+      "Complete end-to-end architecture, 3D elevations, and luxury interior design — from initial floor planning to custom ceilings, joinery, lighting, and premium finishes.",
   },
   {
     slug: "construction",
@@ -226,7 +221,7 @@ export const galleryImages = [
   "/images/interior/interior-6.webp",
 ];
 
-/** Architecture · Construction · Renovation — the three core disciplines. */
+/** Architecture & Construction · Finishing — the three core disciplines. */
 export const disciplines = [
   {
     slug: "architecture",

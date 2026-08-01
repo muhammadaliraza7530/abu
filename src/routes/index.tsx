@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroSection } from "@/components/home/HeroSection";
-import { ShowreelSection, VideoGallerySection } from "@/components/home/VideoSections";
+import { VideoGallerySection } from "@/components/home/VideoSections";
 import {
   DisciplinesSection,
   LeadershipSection,
@@ -33,7 +33,6 @@ function HomePage() {
   return (
     <>
       <HeroSection />
-      <ShowreelSection />
       <StatsSection />
       <ProjectsSection />
       <DisciplinesSection />

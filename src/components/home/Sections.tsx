@@ -71,14 +71,14 @@ export function StatsSection() {
   );
 }
 
-/** Architecture · Construction · Renovation — each box opens its own photo page. */
+/** Architecture & Construction · Finishing — each box opens its own photo page. */
 export function DisciplinesSection() {
   return (
     <section id="disciplines" className="border-t border-border py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="What we build"
-          title="Architecture · Construction · Renovation"
+          title="Architecture & Construction · Finishing"
           intro="Four disciplines, one accountable team. Open a card to see real work from our sites."
           align="center"
         />
@@ -127,53 +127,135 @@ export function DisciplinesSection() {
 }
 
 export function RegisteredSection() {
-  const loop = [...registrations, ...registrations];
-  return (
-    <section className="relative overflow-hidden border-y border-border bg-card/40 py-14 lg:py-20">
-      <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-50" />
-      <div className="relative mx-auto max-w-5xl px-5 text-center lg:px-8">
-        <Reveal>
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-primary sm:text-xs">
-            <BadgeCheck className="size-4" /> Government registered
-          </p>
-          <h2 className="mt-5 text-xl leading-tight sm:text-3xl lg:text-4xl">
-            Registered &amp; approved with <span className="text-primary">all major departments</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            A licensed, government-registered construction firm — approved to design, build and renovate inside DHA,
-            Bahria Town, Lake City and every other private housing society.
-          </p>
-        </Reveal>
-      </div>
+  // Load only actual files present in /public/images/logos via Vite glob.
+  // Use the explicit public path and eager import so Vite can replace the call at build time.
+  const logosMap = import.meta.glob("/public/images/logos/*.{webp,png,jpg,jpeg}", {
+    eager: true,
+    import: "default",
+  });
 
-      <Reveal>
-        <div className="relative mt-10 lg:mt-14">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-card to-transparent sm:w-28" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-card to-transparent sm:w-28" />
-          <AutoScroller speed={0.055} innerClassName="gap-4 px-5 lg:px-8">
-            {loop.map((r, i) => (
-              <figure
-                key={`${r.name}-${i}`}
-                className="group flex w-[150px] shrink-0 flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-background/80 px-4 py-5 backdrop-blur transition-colors duration-300 hover:border-primary/60 sm:w-[190px] sm:px-6 sm:py-7"
-              >
-                <span className="flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 sm:h-20 sm:p-3">
-                  <img
-                    src={r.logo}
-                    alt={`${r.name} logo`}
-                    loading="lazy"
-                    draggable={false}
-                    className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </span>
-                <figcaption className="text-center text-[10px] font-bold uppercase leading-tight tracking-[0.14em] text-muted-foreground transition-colors group-hover:text-primary sm:text-[11px]">
-                  {r.name}
-                </figcaption>
-              </figure>
-            ))}
-          </AutoScroller>
+  // Build list of logos from the glob keys. Ensure src resolves to /images/logos/<filename>
+  const logos = Object.keys(logosMap).map((p) => {
+    const filename = p.split("/").pop() ?? ""; // e.g. "fbr.webp"
+    const nameRaw = filename.replace(/\.(webp|png|jpg|jpeg)$/i, "");
+    // Replace dashes/underscores with spaces, turn 'AND' into '&', then uppercase
+    const name = nameRaw.replace(/[-_]+/g, " ").replace(/\bAND\b/gi, "&").trim().toUpperCase();
+    const src = `/images/logos/${filename}`;
+    return { name, src };
+  });
+
+  // Only render logos that actually exist in the folder. Duplicate the array for the scroller.
+  const loop = [...logos, ...logos];
+
+  const privateSocietiesMap = import.meta.glob("/public/images/Private Registered Center/*.{webp,png,jpg,jpeg}", {
+    eager: true,
+    import: "default",
+  });
+
+  const privateSocieties = Object.keys(privateSocietiesMap).map((p) => {
+    const filename = p.split("/").pop() ?? "";
+    const nameRaw = filename.replace(/\.(webp|png|jpg|jpeg)$/i, "");
+    const name = nameRaw.replace(/[-_]+/g, " ").replace(/\bAND\b/gi, "&").trim().toUpperCase();
+    const src = `/images/Private Registered Center/${filename}`;
+    return { name, src };
+  });
+
+  const privateLoop = [...privateSocieties, ...privateSocieties];
+
+  return (
+    <>
+      <section className="relative overflow-hidden border-y border-border bg-card/40 py-14 lg:py-20">
+        <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-50" />
+        <div className="relative mx-auto max-w-5xl px-5 text-center lg:px-8">
+          <Reveal>
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-primary sm:text-xs">
+              <BadgeCheck className="size-4" /> GOVERNMENT REGISTERED
+            </p>
+            <h2 className="mt-5 text-xl leading-tight sm:text-3xl lg:text-4xl">
+              Registered &amp; approved with <span className="text-primary">all major departments</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              A licensed, government-registered construction firm — approved to design, build and renovate inside DHA,
+              Bahria Town, Lake City and every other private housing society.
+            </p>
+          </Reveal>
         </div>
-      </Reveal>
-    </section>
+
+        <Reveal>
+          <div className="relative mt-10 lg:mt-14">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-card to-transparent sm:w-28" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-card to-transparent sm:w-28" />
+            <AutoScroller speed={0.055} innerClassName="gap-4 px-5 lg:px-8">
+              {loop.map((r, i) => (
+                <figure
+                  key={`${r.name}-${i}`}
+                  className="group flex w-[150px] shrink-0 flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-background/80 px-4 py-5 backdrop-blur transition-transform duration-500 hover:-translate-y-1 hover:border-primary/60 sm:w-[190px] sm:px-6 sm:py-7"
+                >
+                  <span className="flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 sm:h-20 sm:p-3">
+                    <img
+                      src={r.src}
+                      alt={`${r.name} logo`}
+                      loading="lazy"
+                      draggable={false}
+                      className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </span>
+                  <figcaption className="text-center text-[10px] font-bold uppercase leading-tight tracking-[0.14em] text-muted-foreground transition-colors group-hover:text-primary sm:text-[11px]">
+                    {r.name}
+                  </figcaption>
+                </figure>
+              ))}
+            </AutoScroller>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="relative overflow-hidden border-y border-border bg-card/40 py-14 lg:py-20">
+        <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-50" />
+        <div className="relative mx-auto max-w-5xl px-5 text-center lg:px-8">
+          <Reveal>
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-primary sm:text-xs">
+              <BadgeCheck className="size-4" /> APPROVED PRIVATE SOCIETIES
+            </p>
+            <h2 className="mt-5 text-xl leading-tight sm:text-3xl lg:text-4xl">
+              Approved &amp; registered in <span className="text-primary">major housing societies</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Approved to design, build, and execute projects across top housing societies including Bahria Town, DHA,
+              Lake City, Citi Housing, and more.
+            </p>
+          </Reveal>
+        </div>
+
+        <Reveal>
+          <div className="relative mt-10 lg:mt-14">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-card to-transparent sm:w-28" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-card to-transparent sm:w-28" />
+            <AutoScroller speed={0.055} innerClassName="gap-4 px-5 lg:px-8">
+              {privateLoop.map((r, i) => (
+                <figure
+                  key={`${r.name}-${i}`}
+                  className="group flex w-[150px] shrink-0 flex-col items-center gap-3 rounded-2xl border border-primary/20 bg-background/80 px-4 py-5 backdrop-blur transition-transform duration-500 hover:-translate-y-1 hover:border-primary/60 sm:w-[190px] sm:px-6 sm:py-7"
+                >
+                  <span className="flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 sm:h-20 sm:p-3">
+                    <img
+                      src={r.src}
+                      alt={`${r.name} logo`}
+                      loading="lazy"
+                      draggable={false}
+                      className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </span>
+                  <figcaption className="text-center text-[10px] font-bold uppercase leading-tight tracking-[0.14em] text-muted-foreground transition-colors group-hover:text-primary sm:text-[11px]">
+                    {r.name}
+                  </figcaption>
+                </figure>
+              ))}
+            </AutoScroller>
+          </div>
+        </Reveal>
+      </section>
+    </>
   );
 }
 

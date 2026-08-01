@@ -42,7 +42,7 @@ export function HeroSection() {
           </h1>
           </span>
           <h2 className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white/90 sm:text-sm md:text-base">
-            Architecture · Construction · Renovation
+            Architecture & Construction · Finishing
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg">
             A full-service architecture, construction & renovation firm — design, grey structure, interiors and
@@ -50,7 +50,7 @@ export function HeroSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
-            {["Govt. Registered", "DHA", "Bahria Town", "Lake City"].map((b) => (
+            {["Government. Registered", "Private Registered Center",].map((b) => (
               <span
                 key={b}
                 className="rounded-full border border-primary/40 bg-black/40 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.16em] text-primary backdrop-blur-sm sm:text-[11px]"
