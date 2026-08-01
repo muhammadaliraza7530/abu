@@ -1,6 +1,39 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { navLinks, offices, services, site } from "@/lib/site-data";
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/share/1FQM3DxxeP/",
+    icon: Facebook,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/a.tdevelopers?igsh=ZDEwMXJzd213bDh3",
+    icon: Instagram,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/abbuturabofficial",
+    icon: Linkedin,
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@abbuturabofficial?is_from_webapp=1&sender_device=pc",
+    // TikTok SVG component since Lucide doesn't include TikTok
+    icon: ({ className }: { className?: string }) => (
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className={className}
+        aria-hidden="true"
+      >
+        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.52-1.29 2.51.02.93.52 1.8 1.32 2.27.8.48 1.83.5 2.65.04.82-.44 1.37-1.3 1.41-2.24.03-4.14.01-8.28.01-12.42z" />
+      </svg>
+    ),
+  },
+];
 
 export function Footer() {
   return (
@@ -14,23 +47,25 @@ export function Footer() {
               Architecture · Interior · Construction · Renovation. Building luxury residences across Lahore and
               Pakistan-wide since 2014, with trust, quality and perfection.
             </p>
-            <a
-              href={site.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Abbu Turab on Facebook"
-              className="reg-chip mt-6 inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-background px-4 py-2.5"
-            >
-              <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#1877F2]">
-                <svg viewBox="0 0 24 24" className="size-4 fill-white" aria-hidden="true">
-                  <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z" />
-                </svg>
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.16em] sm:text-[11px]">
-                Follow us on Facebook
-              </span>
-            </a>
-
+            
+            {/* Social Icons Section */}
+            <div className="mt-6 flex items-center gap-3">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow us on ${item.name}`}
+                    className="grid size-10 place-items-center rounded-full border border-border bg-background/80 text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <Icon className="size-5" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           <div className="min-w-0">
