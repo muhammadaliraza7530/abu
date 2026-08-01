@@ -15,9 +15,9 @@ export const site = {
     "https://wa.me/923369661111?text=Hello%20Abbu%20Turab%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project.",
   hours: [
     { day: "Monday to Thursday", time: "10am to 7pm" },
-    // { day: "Friday", time: "9am to 12pm & 3pm to 7pm" },
-    { day: "Saturday & Sunday", time: "10am to 7pm" },
     { day: "Friday", time: "Closed" },
+    { day: "Saturday & Sunday", time: "10am to 7pm" },
+    
   ],
 };
 
