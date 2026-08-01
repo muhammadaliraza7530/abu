@@ -84,7 +84,8 @@ export const services = [
   {
     slug: "architecture-interior",
     title: "Architecture & Interior Design",
-    image: "/images/at/design.webp",
+    image: "/images/services/underconstruction.webp",
+    detailImage: "/images/services/s2.jpg",
     short:
       "Complete end-to-end architecture, 3D elevations, and luxury interior design — from initial floor planning to custom ceilings, joinery, lighting, and premium finishes.",
     body:
@@ -93,30 +94,46 @@ export const services = [
   {
     slug: "construction",
     title: "Construction & Turnkey",
-    image: "/images/at/construction.webp",
+    image: "/images/gallery/IMG-20260726-WA0042.webp",
+    detailImage: "/images/services/s3.jpg",
     short: "Grey structure to handover — precision execution with strict quality control.",
     body: "From site marking, foundation and grey structure to insulation, finishes and handover, our site teams execute with strict quality control. Every phase is supervised by senior engineers and documented for you week by week.",
   },
 ];
 
+/** Home page project rail — images are unique to the home page. */
 export const projects = [
-  { title: "2 Kanal Luxury Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-3.webp" },
-  { title: "1 Kanal Modern Villa", location: "DHA Phase 6, Lahore", image: "/images/at/villa-1.webp" },
-  { title: "10 Marla Contemporary Home", location: "DHA Phase 8, Lahore", image: "/images/at/villa-2.webp" },
-  { title: "Classical White Villa", location: "DHA Phase 5, Lahore", image: "/images/at/villa-3.webp" },
+  { title: "2 Kanal Luxury Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-1.webp" },
+  { title: "Grand Facade Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-2.webp" },
+  { title: "Warm Elevation Home", location: "DHA Phase 6, Lahore", image: "/images/at/hero-3.webp" },
   { title: "Modern Brick Townhouse", location: "Bahria Town, Lahore", image: "/images/at/villa-4.webp" },
-  { title: "Grand Facade Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-1.webp" },
-  { title: "Warm Elevation Home", location: "DHA Phase 6, Lahore", image: "/images/at/hero-2.webp" },
-  { title: "Luxury Interior Project", location: "DHA Phase 6, Lahore", image: "/images/at/interior-1.webp" },
-  { title: "Grand Renovation Project", location: "Lake City, Lahore", image: "/images/gallery/IMG-20260726-WA0041.webp" },
-  { title: "Spanish Elevation Villa", location: "Bahria Orchard, Lahore", image: "/images/at/villa-3.webp" },
+  { title: "Contemporary Family Home", location: "DHA Phase 8, Lahore", image: "/images/projects/3.webp" },
+  { title: "Premium Corner Residence", location: "Lake City, Lahore", image: "/images/gallery/IMG-20260726-WA0039.webp" },
+  { title: "Elevation Upgrade Project", location: "Bahria Orchard, Lahore", image: "/images/gallery/IMG-20260726-WA0040.webp" },
+  { title: "Turnkey Luxury Build", location: "DHA Phase 5, Lahore", image: "/images/gallery/IMG-20260726-WA0046.webp" },
+];
+
+/** Projects page portfolio — a completely separate image set. */
+export const portfolioProjects = [
+  { title: "2 Kanal Signature Villa", location: "DHA Phase 7, Lahore", image: "/images/portfolio/p2.jpg" },
+  { title: "Classical White Residence", location: "DHA Phase 5, Lahore", image: "/images/portfolio/p3.jpg" },
+  { title: "Modern Brick Townhouses", location: "Bahria Town, Lahore", image: "/images/portfolio/p4.jpg" },
+  { title: "Spanish Elevation Villa", location: "Bahria Orchard, Lahore", image: "/images/portfolio/p5.jpg" },
+  { title: "10 Marla Night Elevation", location: "DHA Phase 8, Lahore", image: "/images/portfolio/p6.jpg" },
+  { title: "Double Height Living Hall", location: "DHA Phase 6, Lahore", image: "/images/portfolio/p7.jpg" },
+  { title: "Designer Kitchen Project", location: "DHA Phase 7, Lahore", image: "/images/portfolio/p8.jpg" },
+  { title: "Master Suite Interior", location: "Lake City, Lahore", image: "/images/portfolio/p9.jpg" },
+  { title: "Sculptural Staircase Home", location: "DHA Phase 6, Lahore", image: "/images/portfolio/p10.jpg" },
+  { title: "Grey Structure — 1 Kanal", location: "Park View City, Lahore", image: "/images/portfolio/p11.jpg" },
+  { title: "Masonry & Facade Works", location: "Etihad Town, Lahore", image: "/images/portfolio/p12.jpg" },
+  { title: "Marble Bathroom Suite", location: "DHA Phase 5, Lahore", image: "/images/portfolio/p13.jpg" },
 ];
 
 export const leader = {
   name: "Abbu Turab",
   role: "CEO & Founder",
   since: "Feb 6, 2014",
-  image: "/images/at/interior-2.webp",
+  image: "/images/gallery/IMG-20260726-WA0041.webp",
   quote:
     "Every home we build is a promise — modern architecture, luxury aesthetics and top-quality construction, delivered with trust and perfection.",
 };
@@ -128,48 +145,53 @@ export const leaderPoints = [
   "12+ years, 110+ projects",
 ];
 
+/** Home page site updates — unique images. */
 export const updates = [
   {
-    image: "/images/at/hero-3.webp",
+    image: "/images/gallery/IMG-20260726-WA0043.webp",
     tag: "Under Development",
     title: "2 Kanal Premium Residence",
     location: "DHA Phase 7, Lahore",
     body: "Modern architecture and luxury finishes, under development.",
   },
   {
-    image: "/images/at/villa-1.webp",
+    image: "/images/gallery/IMG-20260726-WA0044.webp",
     tag: "Facade Complete",
     title: "1 Kanal Classical Villa",
     location: "DHA Phase 6, Lahore",
     body: "Ornate facade complete — landscaping and finishing under way.",
   },
   {
-    image: "/images/at/construction.webp",
-    tag: "Grey Structure",
-    title: "10 Marla Modern Home",
-    location: "DHA Phase 8, Lahore",
-    body: "Slab poured, columns cured — grey structure standing tall.",
-  },
-  {
-    image: "/images/at/interior-1.webp",
+    image: "/images/gallery/IMG-20260726-WA0045.webp",
     tag: "Interior Finished",
     title: "Grand Living Interior",
     location: "DHA Phase 6, Lahore",
     body: "Double-height hall with ornate ceiling and marble floors.",
   },
+];
+
+/** Projects page site updates — separate image set. */
+export const projectUpdates = [
   {
-    image: "/images/at/villa-2.webp",
-    tag: "Handover",
-    title: "Warm Elevation Residence",
+    image: "/images/portfolio/p14.jpg",
+    tag: "Interior Finished",
+    title: "Formal Dining Room",
     location: "DHA Phase 7, Lahore",
-    body: "Keys handed over — warm brick elevation, arched windows.",
+    body: "Panelled walls, hand-picked chandelier and warm oak flooring delivered.",
   },
   {
-    image: "/images/at/villa-4.webp",
-    tag: "New Project",
-    title: "Modern Townhouse Kickoff",
+    image: "/images/portfolio/p15.jpg",
+    tag: "Handover",
+    title: "Entrance Lobby Reveal",
+    location: "DHA Phase 6, Lahore",
+    body: "Wooden slat feature wall with cove lighting and marble flooring.",
+  },
+  {
+    image: "/images/portfolio/p16.jpg",
+    tag: "In Progress",
+    title: "Rooftop Terrace Build",
     location: "Bahria Town, Lahore",
-    body: "New build underway — 3D elevations approved, site marked.",
+    body: "Pergola, outdoor seating and skyline landscaping nearing completion.",
   },
 ];
 
@@ -205,20 +227,19 @@ export const testimonials = [
 ];
 
 export const galleryImages = [
-  "/images/gallery/IMG-20260726-WA0039.webp",
-  "/images/gallery/IMG-20260726-WA0040.webp",
-  "/images/gallery/IMG-20260726-WA0041.webp",
-  "/images/gallery/IMG-20260726-WA0042.webp",
-  "/images/gallery/IMG-20260726-WA0043.webp",
-  "/images/gallery/IMG-20260726-WA0044.webp",
-  "/images/gallery/IMG-20260726-WA0045.webp",
-  "/images/gallery/IMG-20260726-WA0046.webp",
-  "/images/interior/interior-1.webp",
-  "/images/interior/interior-2.webp",
-  "/images/interior/interior-3.webp",
-  "/images/interior/interior-4.webp",
-  "/images/interior/interior-5.webp",
-  "/images/interior/interior-6.webp",
+  "/images/portfolio/p17.jpg",
+  "/images/portfolio/p18.jpg",
+  "/images/portfolio/p19.jpg",
+  "/images/portfolio/p20.jpg",
+  "/images/portfolio/p21.jpg",
+  "/images/portfolio/p22.jpg",
+];
+
+/** Projects page walkthrough videos (files in /public/projectPageVideo). */
+export const projectVideos = [
+  { src: "/projectPageVideo/projectVidoe1.mp4", title: "Villa Walkthrough" },
+  { src: "/projectPageVideo/projectVidoe2.mp4", title: "Interior Tour" },
+  { src: "/projectPageVideo/ProjectVideo3.mp4", title: "Site Progress" },
 ];
 
 /** Architecture & Construction · Finishing — the three core disciplines. */
@@ -230,12 +251,7 @@ export const disciplines = [
     body: "Site-specific architecture, structural drawings, working plans and photoreal 3D elevations — approved by you before construction begins.",
     points: ["2D working & structural drawings", "Photoreal 3D elevations", "Approval & society drawing submissions"],
     cover: "/images/at/design.webp",
-    images: [
-      "/images/at/design.webp",
-      "/images/at/hero-1.webp",
-      "/images/at/villa-3.webp",
-      "/images/at/hero-2.webp",
-    ],
+    images: ["/images/services/s4.jpg", "/images/services/s5.jpg"],
   },
   {
     slug: "construction",
@@ -244,12 +260,7 @@ export const disciplines = [
     body: "Foundation, grey structure, finishing and turnkey delivery executed by senior engineers with strict quality control and weekly reporting.",
     points: ["Grey structure & turnkey packages", "Certified material & steel schedules", "Weekly site progress reporting"],
     cover: "/images/at/construction.webp",
-    images: [
-      "/images/at/construction.webp",
-      "/images/gallery/IMG-20260726-WA0041.webp",
-      "/images/gallery/IMG-20260726-WA0043.webp",
-      "/images/at/villa-4.webp",
-    ],
+    images: ["/images/services/s6.jpg", "/images/interior/interior-6.webp"],
   },
   {
     slug: "renovation",
@@ -258,12 +269,7 @@ export const disciplines = [
     body: "Full house renovation, facade re-elevation, interior remodelling and structural repairs — completed without you leaving the neighbourhood you love.",
     points: ["Facade & elevation upgrades", "Kitchen, bath & interior remodelling", "Structural repair & waterproofing"],
     cover: "/images/at/interior-1.webp",
-    images: [
-      "/images/at/interior-1.webp",
-      "/images/gallery/IMG-20260726-WA0046.webp",
-      "/images/at/villa-2.webp",
-      "/images/gallery/IMG-20260726-WA0045.webp",
-    ],
+    images: ["/images/interior/interior-1.webp", "/images/interior/interior-2.webp"],
   },
   {
     slug: "interior",
@@ -271,13 +277,8 @@ export const disciplines = [
     tagline: "Ceilings, joinery, lighting & finishes",
     body: "Bespoke interiors designed and executed in-house — false ceilings, wall panelling, kitchens, wardrobes, marble work and lighting schemes that land exactly as rendered.",
     points: ["Ceilings, panelling & bespoke joinery", "Kitchens, wardrobes & marble work", "Lighting design, styling & handover"],
-    cover: "/images/interior/interior-1.webp",
-    images: [
-      "/images/interior/interior-1.webp",
-      "/images/interior/interior-3.webp",
-      "/images/interior/interior-6.webp",
-      "/images/interior/interior-2.webp",
-    ],
+    cover: "/images/at/interior-2.webp",
+    images: ["/images/interior/interior-3.webp", "/images/interior/interior-4.webp"],
   },
 ];
 

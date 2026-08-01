@@ -42,7 +42,7 @@ function ServicesPage() {
         eyebrow="Our services"
         title="Architecture & Construction · Finishing"
         intro="Four disciplines under one accountable roof — design it, build it, renovate it, style it, with a government-registered firm approved across DHA, Bahria Town and Lake City."
-        image="/images/at/construction.webp"
+        image="/images/services/s1.jpg"
       />
 
       <section className="py-20 lg:py-28">
@@ -51,7 +51,7 @@ function ServicesPage() {
             <div key={d.slug} id={d.slug} className="scroll-mt-28">
               <div className={`grid gap-10 lg:grid-cols-2 lg:items-center ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
                 <Reveal>
-                  <img src={d.cover} alt={d.title} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-2xl object-cover" />
+                  <img src={d.images[0]} alt={d.title} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-2xl object-cover" />
                 </Reveal>
                 <Reveal delay={120}>
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary sm:text-xs">{d.tagline}</p>
@@ -68,7 +68,7 @@ function ServicesPage() {
                 </Reveal>
               </div>
               <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {d.images.map((img) => (
+                {d.images.slice(1).map((img) => (
                   <img key={img} src={img} alt={d.title} loading="lazy" decoding="async" className="aspect-square w-full rounded-xl object-cover" />
                 ))}
               </div>
@@ -85,7 +85,7 @@ function ServicesPage() {
               <Reveal key={s.slug} delay={i * 130} className="scroll-mt-28">
                 <Panel className="h-full overflow-hidden bg-background">
                   <span id={s.slug} className="block scroll-mt-28" />
-                  <img src={s.image} alt={s.title} loading="lazy" decoding="async" className="aspect-[16/10] w-full rounded-t-[1.2rem] object-cover" />
+                  <img src={s.detailImage} alt={s.title} loading="lazy" decoding="async" className="aspect-[16/10] w-full rounded-t-[1.2rem] object-cover" />
                   <div className="p-6 sm:p-7">
                     <h3 className="text-base sm:text-lg">{s.title}</h3>
                     <p className="mt-3 text-[13px] leading-relaxed text-pretty text-muted-foreground sm:text-sm">{s.body}</p>

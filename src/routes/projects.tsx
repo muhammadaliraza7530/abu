@@ -3,8 +3,7 @@ import { MapPin } from "lucide-react";
 import { AutoScroller } from "@/components/AutoScroller";
 import { CtaBand, PageHero } from "@/components/PageBits";
 import { Panel, Reveal, SectionHeading } from "@/components/ui-bits";
-import { VideoGallerySection } from "@/components/home/VideoSections";
-import { galleryImages, projects, updates } from "@/lib/site-data";
+import { galleryImages, portfolioProjects, projectUpdates, projectVideos } from "@/lib/site-data";
 
 
 const title = "Projects | Luxury Homes Built in DHA, Bahria Town & Lake City";
@@ -24,7 +23,7 @@ export const Route = createFileRoute("/projects")({
 });
 
 function ProjectsPage() {
-  const rail = [...projects, ...projects];
+  const rail = [...portfolioProjects, ...portfolioProjects];
 
   return (
     <>
@@ -32,7 +31,7 @@ function ProjectsPage() {
         eyebrow="Our projects"
         title="Clients' dreams, delivered"
         intro="Over 300 completed homes and counting — architecture, construction, interiors and renovations across Lahore's premium societies."
-        image="/images/at/hero-3.webp"
+        image="/images/portfolio/p1.jpg"
       />
 
       <section className="py-20 lg:py-28">
@@ -61,7 +60,7 @@ function ProjectsPage() {
         </AutoScroller>
 
         <div className="mx-auto mt-12 grid max-w-7xl gap-5 px-5 sm:grid-cols-2 lg:grid-cols-3 lg:px-8">
-          {projects.map((p, i) => (
+          {portfolioProjects.map((p, i) => (
             <Reveal key={`${p.title}-grid-${i}`} delay={(i % 3) * 110}>
               <Panel className="group relative h-full overflow-hidden bg-card/40">
                 <img
@@ -88,7 +87,7 @@ function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading eyebrow="Site updates" title="Live from our sites" align="center" />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {updates.map((u, i) => (
+            {projectUpdates.map((u, i) => (
               <Reveal key={u.title} delay={(i % 3) * 110}>
                 <Panel className="flex h-full flex-col overflow-hidden bg-background">
                   <img src={u.image} alt={u.title} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-t-[1.2rem] object-cover" />
@@ -126,7 +125,29 @@ function ProjectsPage() {
         </div>
       </section>
 
-      <VideoGallerySection />
+      <section id="project-videos" className="border-t border-border bg-card/30 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeading eyebrow="Video walkthroughs" title="See our projects in motion" align="center" />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {projectVideos.map((v, i) => (
+              <Reveal key={v.src} delay={(i % 3) * 110}>
+                <div className="group relative overflow-hidden rounded-[1.35rem] border border-primary/25 bg-background p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_24px_70px_rgba(212,161,42,0.22)]">
+                  <video
+                    src={v.src}
+                    controls
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="aspect-[9/16] w-full rounded-[1.1rem] bg-black object-cover"
+                  />
+                  <p className="px-3 py-3 text-[10px] font-bold uppercase tracking-[0.22em] text-primary sm:text-xs">{v.title}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <CtaBand />
     </>
