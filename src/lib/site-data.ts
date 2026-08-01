@@ -75,9 +75,9 @@ export const stats = [
 
 export const team = [
   { name: "CH. Shehzad", role: "Managing Director", image: "/temImages/Team1.webp" },
-  { name: "MR. Sohair", role: "Director Operations & Director Business Development", image: "/temImages/Team2.webp" },
-  { name: "Saad Ahmad", role: "Director Engineering & Technical", image: "/temImages/Team3.webp" },
-  { name: "Faisal Naeem", role: "Managing Projects", image: "/temImages/Team4.webp" },
+  { name: "Saad Ahmad", role: "Director Engineering & Technical", image: "/temImages/Team2.webp" },
+  { name: "Faisal Naeem", role: "Managing Projects", image: "/temImages/Team3.webp" },
+  { name: "Miss Saliha", role: "Sales and Marketing Executive", image: "/temImages/Team4.webp" },
 ];
 
 export const services = [
