@@ -45,8 +45,8 @@ export function HeroSection() {
             Architecture & Construction · Finishing
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg">
-            A full-service architecture, construction & renovation firm — design, grey structure, interiors and
-            turnkey delivery across Pakistan.
+            {/* A full-service architecture, construction & renovation firm — design, grey structure, interiors and
+            turnkey delivery across Pakistan. */}
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
