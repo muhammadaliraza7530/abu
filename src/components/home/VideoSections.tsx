@@ -33,7 +33,11 @@ export function VideoGallerySection() {
         <div className="mx-auto mt-12 grid max-w-[44rem] grid-cols-2 gap-3 sm:gap-5">
           {videoGallery.map((v) => (
             <div key={v.src} className="lit-panel overflow-hidden bg-card/50 p-1.5 sm:p-2">
-              <VideoPlayer src={v.src} poster={v.src.replace(".mp4", ".webp")} rounded="rounded-[1rem]" />
+              <VideoPlayer
+                src={v.src}
+                poster={v.poster ?? v.src.replace(".mp4", ".webp")}
+                rounded="rounded-[1rem]"
+              />
             </div>
           ))}
         </div>

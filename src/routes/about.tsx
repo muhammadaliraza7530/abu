@@ -1,9 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CircleCheck, Quote } from "lucide-react";
+import { CircleCheck } from "lucide-react";
 import { CtaBand, PageHero, Prose } from "@/components/PageBits";
 import { Counter, Panel, Reveal, SectionHeading } from "@/components/ui-bits";
-import { leader, stats, team } from "@/lib/site-data";
-import { RegisteredSection } from "@/components/home/Sections";
+import { stats } from "@/lib/site-data";
+import {
+  LeadershipSection,
+  RegisteredSection,
+  TeamSection,
+  UpdatesSection,
+} from "@/components/home/Sections";
+import { VideoGallerySection } from "@/components/home/VideoSections";
 
 const title = "About Abbu Turab | Govt. Registered Builders in DHA & Bahria Town";
 const description =
@@ -145,49 +151,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-border py-20 lg:py-28">
-        <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <SectionHeading eyebrow="Leadership" title="The mind behind Abbu Turab" align="center" />
-          <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_1.3fr] lg:items-center">
-            <Reveal>
-              <Panel className="mx-auto w-full max-w-sm overflow-hidden bg-card/50 text-center">
-                <img src={leader.image} alt={leader.name} loading="lazy" decoding="async" className="aspect-[4/5] w-full rounded-t-[1.2rem] object-cover" />
-                <div className="p-6">
-                  <h3 className="text-lg capitalize">{leader.name}</h3>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-primary sm:text-xs">{leader.role} · Since {leader.since}</p>
-                </div>
-              </Panel>
-            </Reveal>
-            <Reveal delay={130}>
-              <Quote className="size-8 text-primary" />
-              <p className="mt-4 text-base leading-relaxed sm:text-xl">“{leader.quote}”</p>
-              <Prose>
-                <p className="mt-6">
-                  Our founder still reviews every elevation and walks every site personally. That hands-on
-                  leadership is why clients get the same standard on a 5 marla home as on a 2 kanal residence.
-                </p>
-              </Prose>
-            </Reveal>
-          </div>
-
-          <div className="mt-20">
-            <SectionHeading eyebrow="Our team" title="People who build your dream" align="center" />
-            <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {team.map((m, i) => (
-                <Reveal key={m.name} delay={i * 110}>
-                  <Panel className="group h-full overflow-hidden bg-card/40">
-                    <img src={m.image} alt={m.name} loading="lazy" decoding="async" className="aspect-[4/5] w-full rounded-t-[1.2rem] object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="p-4 sm:p-5">
-                      <h3 className="truncate text-sm sm:text-lg">{m.name}</h3>
-                      <p className="mt-2 text-[9px] uppercase tracking-[0.18em] text-primary sm:text-[10px]">{m.role}</p>
-                    </div>
-                  </Panel>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <VideoGallerySection />
+      <UpdatesSection />
+      <LeadershipSection />
+      <TeamSection />
 
       <CtaBand />
     </>

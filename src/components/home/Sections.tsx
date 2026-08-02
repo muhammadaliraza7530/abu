@@ -16,40 +16,45 @@ import {
 } from "@/lib/site-data";
 
 export function ProjectsSection() {
-  const loop = [...projects, ...projects];
+  const sneakPeek = projects.slice(0, 3);
+
   return (
     <section id="projects" className="border-t border-border py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading eyebrow="Our projects" title="Clients' dreams, built" />
-          <Reveal>
-            <Link
-              to="/projects"
-              className="btn-shake sheen-on-hover inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] transition-colors hover:border-primary hover:text-primary"
-            >
-              Load more <ArrowRight className="size-4" />
-            </Link>
-          </Reveal>
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            eyebrow="Current projects"
+            title="Latest residential and renovation work"
+            intro="A quick look at our active projects in DHA, Bahria Town and Lake City. See the full portfolio on the Projects page."
+            align="left"
+          />
+          <Link
+            to="/projects"
+            className="btn-shake sheen-on-hover inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] transition-colors hover:border-primary hover:text-primary"
+          >
+            View all projects <ArrowRight className="size-4" />
+          </Link>
+        </div>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+          {sneakPeek.map((project) => (
+            <Panel key={project.title} className="overflow-hidden bg-card/50">
+              <img
+                src={project.image}
+                alt={`${project.title}, ${project.location}`}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="h-56 w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="p-5">
+                <p className="text-sm font-semibold text-foreground">{project.title}</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary">{project.location}</p>
+              </div>
+            </Panel>
+          ))}
         </div>
       </div>
-      <AutoScroller className="mt-10 py-4" innerClassName="gap-6 px-5" speed={0.16}>
-        {loop.map((p, i) => (
-          <Panel key={`${p.image}-${i}`} className="group relative w-[19rem] shrink-0 overflow-hidden bg-card/50 sm:w-[26rem]">
-            <img
-              src={p.image}
-              alt={`${p.title}, ${p.location}`}
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-              className="h-[20rem] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-[28rem]"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/60 to-transparent p-5 pt-16 sm:p-6">
-              <h3 className="text-sm sm:text-base">{p.title}</h3>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-primary sm:text-xs">{p.location}</p>
-            </div>
-          </Panel>
-        ))}
-      </AutoScroller>
     </section>
   );
 }

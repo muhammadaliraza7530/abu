@@ -105,6 +105,8 @@ export const services = [
 
 /** Home page project rail — images are unique to the home page. */
 export const projects = [
+  { title: "New Residential Showcase", location: "DHA Phase 7, Lahore", image: "/new/newImage1.jpeg" },
+  { title: "Contemporary Renovation", location: "Bahria Town, Lahore", image: "/new/newImage2.jpeg" },
   { title: "2 Kanal Luxury Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-1.webp" },
   { title: "Grand Facade Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-2.webp" },
   { title: "Warm Elevation Home", location: "DHA Phase 6, Lahore", image: "/images/at/hero-3.webp" },
@@ -316,6 +318,9 @@ export const registrations = [
 
 
 export const videoGallery = [
+  { src: "/new/newVideo1.mp4", title: "New Site Walkthrough", poster: "/new/newImage1.jpeg" },
+  { src: "/new/newVideo2.mp4", title: "New Renovation Overview", poster: "/new/newImage2.jpeg" },
+  { src: "/new/newVideo3.mp4", title: "New Project Progress" },
   { src: "/video/gallery-1.mp4", title: "Project Walkthrough" },
   { src: "/video/gallery-2.mp4", title: "Facade Reveal" },
   { src: "/video/gallery-3.mp4", title: "Site Progress" },

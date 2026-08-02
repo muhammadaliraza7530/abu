@@ -37,13 +37,7 @@ function HomePage() {
       <ProjectsSection />
       <DisciplinesSection />
       <RegisteredSection />
-      <VideoGallerySection />
-      <LeadershipSection />
-      <TeamSection />
-      <ServicesSection />
-      <UpdatesSection />
       <TestimonialsSection />
-
     </>
   );
 }
