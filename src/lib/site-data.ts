@@ -356,3 +356,4 @@ export const disciplinePhotos: Record<string, string[]> = {
     "/images/at/villa-4.webp",
   ],
 };
+ 
