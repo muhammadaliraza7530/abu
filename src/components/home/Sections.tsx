@@ -50,6 +50,9 @@ export function ProjectsSection() {
               <div className="p-5">
                 <p className="text-sm font-semibold text-foreground">{project.title}</p>
                 <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary">{project.location}</p>
+                {project.description ? (
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                ) : null}
               </div>
             </Panel>
           ))}
