@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BadgeCheck, CircleCheck, Quote } from "lucide-react";
+import { CircleCheck, Quote } from "lucide-react";
 import { CtaBand, PageHero, Prose } from "@/components/PageBits";
 import { Counter, Panel, Reveal, SectionHeading } from "@/components/ui-bits";
-import { leader, registrations, stats, team } from "@/lib/site-data";
+import { leader, stats, team } from "@/lib/site-data";
+import { RegisteredSection } from "@/components/home/Sections";
 
 const title = "About Abbu Turab | Govt. Registered Builders in DHA & Bahria Town";
 const description =
@@ -93,63 +94,7 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Government registrations — highlighted, in depth */}
-      <section className="relative overflow-hidden border-y border-border bg-card/40 py-20 lg:py-28">
-        <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-50" />
-        <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Approvals & registrations"
-            title="Government registered with all departments"
-            intro="We are a licensed, government-registered construction firm — legally cleared to design, submit drawings, build and renovate inside every major housing authority in Pakistan."
-            align="center"
-          />
-
-          <div className="mt-10 flex flex-wrap justify-center gap-2.5">
-            {registrations.map((r) => (
-              <span
-                key={r.name}
-                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-foreground sm:text-xs"
-              >
-                <BadgeCheck className="size-3.5 shrink-0 text-primary" /> {r.name}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                name: "DHA (all phases)",
-                body: "Registered contractor for DHA Lahore Phases 1–9 and DHA EME. We handle NOC paperwork, drawing approvals, water and debris compliance, and phase-wise DHA inspections on your behalf.",
-              },
-              {
-                name: "Bahria Town",
-                body: "Approved to build and renovate across Bahria Town Lahore, Bahria Orchard and Bahria Nasheman — including society-specific elevation controls, setbacks and completion certification.",
-              },
-              {
-                name: "Lake City & all societies",
-                body: "Cleared to work in Lake City, Park View, Al Kabir, Etihad Town, Central Park and every other private society, plus LDA-approved private plots across Lahore.",
-              },
-            ].map((r, i) => (
-              <Reveal key={r.name} delay={i * 120}>
-                <Panel className="h-full bg-background p-5 sm:p-7">
-                  <BadgeCheck className="size-7 text-primary" />
-                  <h3 className="mt-4 text-base sm:text-lg">{r.name}</h3>
-                  <p className="mt-3 text-[13px] leading-relaxed text-pretty text-muted-foreground sm:text-sm">{r.body}</p>
-                </Panel>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={120}>
-            <p className="mx-auto mt-10 max-w-3xl text-center text-[13px] leading-relaxed text-pretty text-muted-foreground sm:text-sm">
-              Registration matters: it means your drawings get submitted correctly the first time, your site never
-              gets sealed mid-build, and your completion certificate is issued without disputes. Every Abbu Turab
-              project is executed by a firm that the authority already recognises — DHA, Bahria Town, Lake City,
-              LDA and PEC alike.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <RegisteredSection />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
