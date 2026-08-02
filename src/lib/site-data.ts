@@ -78,6 +78,9 @@ export const team = [
   { name: "Saad Ahmad", role: "Director Engineering & Technical", image: "/temImages/Team2.webp" },
   { name: "Faisal Naeem", role: "Managing Projects", image: "/temImages/Team3.webp" },
   { name: "Miss Saliha", role: "Sales and Marketing Executive", image: "/temImages/Team4.webp" },
+  { name: "Ibrahim Khan", role: "Art Director", image: "/temImages/Team6.jpeg" },
+  { name: "Miss Sabiha Naz", role: "Director Account & Finance", image: "/temImages/Team5.jpeg" },
+];
 ];
 
 export const services = [
