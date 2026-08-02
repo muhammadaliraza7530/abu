@@ -105,8 +105,20 @@ export const services = [
 
 /** Home page project rail — images are unique to the home page. */
 export const projects = [
-  { title: "New Residential Showcase", location: "DHA Phase 7, Lahore", image: "/new/newImage1.jpeg" },
-  { title: "Contemporary Renovation", location: "Bahria Town, Lahore", image: "/new/newImage2.jpeg" },
+  {
+    title: "Servis Shoes Office Renovation",
+    category: "Corporate Renovation",
+    location: "Servis Shoes Factory, Lahore",
+    description: "Complete corporate office interior renovation, workstations, and ceiling setup for Servis Shoes.",
+    image: "/new/newImage1.jpeg",
+  },
+  {
+    title: "Servis Shoes Office Renovation",
+    category: "Commercial Interior",
+    location: "Servis Shoes Factory, Lahore",
+    description: "Complete corporate office interior renovation, workstations, and ceiling setup for Servis Shoes.",
+    image: "/new/newImage2.jpeg",
+  },
   { title: "2 Kanal Luxury Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-1.webp" },
   { title: "Grand Facade Residence", location: "DHA Phase 7, Lahore", image: "/images/at/hero-2.webp" },
   { title: "Warm Elevation Home", location: "DHA Phase 6, Lahore", image: "/images/at/hero-3.webp" },
