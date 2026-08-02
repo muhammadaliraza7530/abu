@@ -288,7 +288,17 @@ export const disciplines = [
     body: "Bespoke interiors designed and executed in-house — false ceilings, wall panelling, kitchens, wardrobes, marble work and lighting schemes that land exactly as rendered.",
     points: ["Ceilings, panelling & bespoke joinery", "Kitchens, wardrobes & marble work", "Lighting design, styling & handover"],
     cover: "/images/at/interior-2.webp",
-    images: ["/images/interior/interior-3.webp", "/images/interior/interior-4.webp"],
+    images: [
+      "/images/interior/interior-3.webp",
+      "/images/interior/interior-4.webp",
+      "/images/interior/img1.jpeg",
+      "/images/interior/img2.jpeg",
+      "/images/interior/img3.jpeg",
+      "/images/interior/img4.jpeg",
+      "/images/interior/img5.jpeg",
+      "/images/interior/img6.jpeg",
+      "/images/interior/img7.jpeg",
+    ],
   },
 ];
 
