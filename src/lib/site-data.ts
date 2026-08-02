@@ -373,4 +373,25 @@ export const disciplinePhotos: Record<string, string[]> = {
     "/images/at/villa-4.webp",
   ],
 };
+
+export const disciplineMedia: Record<string, Array<{ type: "image" | "video"; src: string; poster?: string; title?: string }>> = {
+  construction: [
+    { type: "image", src: "/Construction/img1.jpeg" },
+    { type: "image", src: "/Construction/img2.jpeg" },
+    { type: "image", src: "/Construction/img3.jpeg" },
+    { type: "image", src: "/Construction/img4.jpeg" },
+    { type: "image", src: "/Construction/img5.jpeg" },
+    { type: "image", src: "/Construction/img6.jpeg" },
+    { type: "image", src: "/Construction/img7.jpeg" },
+    { type: "video", src: "/Construction/newVideo1.mp4", poster: "/Construction/img1.jpeg" },
+    { type: "video", src: "/Construction/newVideo2.mp4", poster: "/Construction/img2.jpeg" },
+    { type: "video", src: "/Construction/newVideo3.mp4", poster: "/Construction/img3.jpeg" },
+    { type: "video", src: "/Construction/newVideo4.mp4", poster: "/Construction/img4.jpeg" },
+    { type: "video", src: "/Construction/newVideo5.mp4", poster: "/Construction/img5.jpeg" },
+    { type: "video", src: "/Construction/newVideo6.mp4", poster: "/Construction/img6.jpeg" },
+    { type: "video", src: "/Construction/newVideo7.mp4", poster: "/Construction/img7.jpeg" },
+    { type: "video", src: "/Construction/newVideo8.mp4", poster: "/Construction/img1.jpeg" },
+    { type: "video", src: "/Construction/newVideo9.mp4", poster: "/Construction/img2.jpeg" },
+  ],
+};
  
