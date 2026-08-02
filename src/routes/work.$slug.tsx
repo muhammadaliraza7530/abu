@@ -1,8 +1,9 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, CircleCheck } from "lucide-react";
 import { CtaBand, PageHero } from "@/components/PageBits";
+import { VideoPlayer } from "@/components/VideoPlayer";
 import { Panel, Reveal, SectionHeading } from "@/components/ui-bits";
-import { disciplinePhotos, disciplines } from "@/lib/site-data";
+import { disciplineMedia, disciplinePhotos, disciplines } from "@/lib/site-data";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -30,7 +31,9 @@ export const Route = createFileRoute("/work/$slug")({
 
 function DisciplinePage() {
   const { item } = Route.useLoaderData();
-  const photos = disciplinePhotos[item.slug] ?? item.images;
+  const mediaItems =
+    disciplineMedia[item.slug] ??
+    (disciplinePhotos[item.slug] ?? item.images).map((src) => ({ type: "image" as const, src }));
   const others = disciplines.filter((d) => d.slug !== item.slug);
 
   return (
@@ -63,16 +66,28 @@ function DisciplinePage() {
           </div>
 
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
-            {photos.map((img, i) => (
-              <Reveal key={`${img}-${i}`} className="reveal-step" delay={(i % 3) * 90}>
+            {mediaItems.map((media, i) => (
+              <Reveal key={`${media.src}-${i}`} className="reveal-step" delay={(i % 3) * 90}>
                 <Panel className="group overflow-hidden bg-card/40 p-1.5">
-                  <img
-                    src={img}
-                    alt={`${item.title} project by Abbu Turab`}
-                    loading={i < 3 ? "eager" : "lazy"}
-                    decoding="async"
-                    className="aspect-[4/3] w-full rounded-[0.95rem] object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                  />
+                  {media.type === "video" ? (
+                    <div className="overflow-hidden rounded-[0.95rem]">
+                      <VideoPlayer
+                        src={media.src}
+                        poster={media.poster}
+                        aspect="aspect-[4/3]"
+                        rounded="rounded-[0.95rem]"
+                        className="h-full w-full"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={media.src}
+                      alt={`${item.title} project by Abbu Turab`}
+                      loading={i < 3 ? "eager" : "lazy"}
+                      decoding="async"
+                      className="aspect-[4/3] w-full rounded-[0.95rem] object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    />
+                  )}
                 </Panel>
               </Reveal>
             ))}
